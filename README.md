@@ -5,7 +5,7 @@ This project was divided into four parts, whose purpose is to perform detailed a
 ![image](https://user-images.githubusercontent.com/74104562/214484820-63a043dd-6d17-45a1-b871-8e66f2d12e3e.png)
 
 ## about the dataset
-A database used was found on the Kaggle platform, which contains details and estimates of 241 flavors from four ice cream brands: Ben&Jerry's, Breyers, Häagen-Dazs and Talenti.
+The database used was found on the Kaggle platform, which contains details and estimates of 241 flavors from four ice cream brands: Ben&Jerry's, Breyers, Häagen-Dazs and Talenti.
 
 ## The files used:
 - 'products.csv': which contains descriptive information about each ice cream flavor: flavor name, description, average rating, and ingredient list.
