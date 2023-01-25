@@ -1,19 +1,22 @@
 # Ice Cream Dataset Project
 
-Este projeto foi dividido em quatro partes, cuja finalidade é realizar análise e modelagem detalhada de um dataset de avaliações de sorvete.
+This project was divided into four parts, whose purpose is to perform detailed analysis and modeling of an ice cream estimation dataset.
 
 ![image](https://user-images.githubusercontent.com/74104562/214484820-63a043dd-6d17-45a1-b871-8e66f2d12e3e.png)
 
-## sobre o dataset
-A base utilizada foi encontrada na plataforma Kaggle, que contém detalhes e avaliações de 241 sabores de quatro marcas de sorvete: Ben&Jerry's, Breyers, Häagen-Dazs e Talenti.
-O arquivo utilizado foi utilizado o 'products.csv', que contém informações descritivas sobre cada sabor de sorvete: nome do sabor, descrição, nota média e lista de ingredientes.
+## about the dataset
+A database used was found on the Kaggle platform, which contains details and estimates of 241 flavors from four ice cream brands: Ben&Jerry's, Breyers, Häagen-Dazs and Talenti.
+
+## The files used:
+- 'products.csv': which contains descriptive information about each ice cream flavor: flavor name, description, average rating, and ingredient list.
+- 'reviews.csv': which contains all the reviews used to calculate the average score of the previous dataset
 
 
-## partes do projeto
-Parte 1: análise exploratória dos dados
+## project planning
+Part 1: exploratory data analysis
 
-Parte 2: tratamento e limpeza dos dados
+Part 2: data processing and cleaning
 
-Parte 3: teste de hipóteses e modelagem com Regressão Linear (em breve)
+Part 3: hypothesis testing and modeling with linear regression (coming soon)
 
-Parte 4: modelagem com Análise de Correspondência Multipla (MCA) (em breve)
+Part 4: modeling with multiple correspondence analysis (MCA) (coming soon)
