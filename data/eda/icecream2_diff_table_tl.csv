@@ -1,0 +1,30 @@
+ingredient,top_count,bottom_count,diff
+lemon,3,1,2
+peanut,1,0,1
+green tea,1,0,1
+matcha green tea,1,0,1
+mango,1,0,1
+mint leaf extractives,1,0,1
+ginger,1,0,1
+almonds,1,0,1
+apple,1,0,1
+oakwood extract,1,0,1
+coconut,1,0,1
+chocolate,4,4,0
+raspberry,1,1,0
+cinnamon,1,1,0
+cocoa powder,3,4,-1
+oats,0,1,-1
+wheat bran,0,1,-1
+black raspberry,0,1,-1
+cherry,0,1,-1
+vermouth,0,1,-1
+wheat germ,0,1,-1
+balsamic vinegar,0,1,-1
+blueberry,0,1,-1
+cream cheese,0,1,-1
+wheat graham flour,0,2,-2
+vanilla,7,9,-2
+salt,4,7,-3
+lemon peel,0,4,-4
+natural flavor,4,9,-5
