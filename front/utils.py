@@ -65,7 +65,7 @@ def correct_model(pred_rating):
     # Define the desired range
     min_rating = 3.00
     max_rating = 4.81
-    average_rating = 4.45
+    average_rating = 4.4
 
     # Adjust the rating based on the difference from 4.35
     dif = pred_rating - average_rating
