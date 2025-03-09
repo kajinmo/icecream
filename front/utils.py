@@ -61,9 +61,35 @@ def run_model(bool_array, model):
     pred = model.predict(bool_array)
     return pred[0]
 
+def correct_model(pred_rating):
+    # Define the desired range
+    min_rating = 3
+    max_rating = 4.81
+    average_rating = 4.45
+
+    # Adjust the rating based on the difference from 4.35
+    dif = pred_rating - average_rating
+
+    if pred_rating < average_rating:
+        # Scale down the difference and add to the original rating
+        corrected_rating = (dif * average_rating * 6.5) + average_rating  # Adjust the scaling factor as needed
+    else:
+        # Scale up the difference and add to the original rating
+        corrected_rating = (dif * average_rating * 4) + average_rating  # Adjust the scaling factor as needed
+
+    print(f'pred: {pred_rating} adj:{corrected_rating}')
+    # Ensure the corrected rating stays within the desired range
+    if corrected_rating < min_rating:
+        corrected_rating = min_rating
+    elif corrected_rating > max_rating:
+        corrected_rating = max_rating
+    
+    return round(corrected_rating, 2)
+
 def predict_rating(dict_of_selected_ingredients, selected_brand_column):
     present_ingredients_list = convert_dict_to_list(dict_of_selected_ingredients, selected_brand_column)
     model, model_columns = load_model()
     bool_array = ingredients_list_to_array(present_ingredients_list, model_columns)
     pred_rating = run_model(bool_array, model)
-    return pred_rating.round(2)
+    pred_rating = correct_model(pred_rating)
+    return pred_rating
