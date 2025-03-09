@@ -13,6 +13,8 @@ ingredients_dir = os.path.join(project_dir, 'data', 'intermediate')
 models_dir = os.path.join(project_dir, 'data', 'model')
 
 
+
+######### Ingredient group functions #########
 # Load the unique ingredients CSV
 def load_data():
     return pd.read_csv(os.path.join(ingredients_dir, 'unique_ingredients.csv'))
@@ -27,13 +29,16 @@ def get_ingredients_for_group(data, group):
 
 
 
+######### Model functions #########
+# append brand to ing dicsts
 
-
-
-
-
-
-
+# Extract all items into a single list
+def convert_dict_to_list(ingredients_dict, selected_brand_column):
+    present_ingredients_list = []
+    for ingredients in ingredients_dict.values():
+        present_ingredients_list.extend(ingredients)
+        present_ingredients_list.append(selected_brand_column)
+    return present_ingredients_list
 
 # Load the model and scaler
 def load_model():
@@ -41,14 +46,24 @@ def load_model():
     model_columns = joblib.load(os.path.join(models_dir, 'colunas_modelo.joblib'))
     return model, model_columns
 
+# Create an array which represents the selected ingredients
 def ingredients_list_to_array(present_ingredients_list, model_columns):
-    # Criar um array que representa a presença dos ingredientes
-    bool_present_ingredients_list = [1 if coluna in present_ingredients_list else 0 for coluna in model_columns]
-    bool_array = np.array(bool_present_ingredients_list).reshape(1, -1)
-    return bool_array
+    bool_present_ingredients_list = []
+    for coluna in model_columns:
+        if coluna in present_ingredients_list:
+            bool_present_ingredients_list.append(1)
+        else:
+            bool_present_ingredients_list.append(0)
+    return np.array(bool_present_ingredients_list).reshape(1, -1)
 
-def predict_rating(present_ingredients_list):
+# Runs prediction model
+def run_model(bool_array, model):
+    pred = model.predict(bool_array)
+    return pred[0]
+
+def predict_rating(dict_of_selected_ingredients, selected_brand_column):
+    present_ingredients_list = convert_dict_to_list(dict_of_selected_ingredients, selected_brand_column)
     model, model_columns = load_model()
     bool_array = ingredients_list_to_array(present_ingredients_list, model_columns)
-    pred = model.predict(bool_array)
-    return pred
+    pred_rating = run_model(bool_array, model)
+    return pred_rating.round(2)

@@ -1,0 +1,11 @@
+services:
+  - type: web
+    plan: free
+    name: icecream-app
+    runtime: python
+    repo: https://github.com/kajinmo/icecream.git
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "streamlit run front/main.py --server.port 10000 --server.address 0.0.0.0"
+    envVars:
+      - key: PORT
+        value: "10000"
