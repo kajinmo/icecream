@@ -63,7 +63,7 @@ def run_model(bool_array, model):
 
 def correct_model(pred_rating):
     # Define the desired range
-    min_rating = 3
+    min_rating = 3.00
     max_rating = 4.81
     average_rating = 4.45
 
