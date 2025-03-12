@@ -184,7 +184,7 @@ def main():
 
             # Running the prediction
             predicted_rating = predict_rating(all_selected_ingredients, selected_brand_column)
-            st.write(f"# The predicted rating for this ice cream is {predicted_rating}")
+            st.write(f"# The predicted rating for this ice cream is {predicted_rating}, on a scale from 1 to 5")
 
 
 # Run the app
